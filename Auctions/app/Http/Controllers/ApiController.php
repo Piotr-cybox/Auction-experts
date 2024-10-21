@@ -15,10 +15,10 @@ class ApiController extends Controller
         dd($response->json());
     }
 
-    public function ShowByAuction()
+    public function ShowByAuction(Request $request, $id)
     {
         $token = env('BEARER_TOKEN');
-        $response = Http::withToken($token)->get('https://automotive.aeapi.net/auction{$id}');
+        $response = Http::withToken($token)->get("https://automotive.aeapi.net/auction/{$id}");
         dd($response->json());
     }
 
